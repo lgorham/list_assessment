@@ -16,14 +16,16 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
-    odd_numbers = []
-    for i in numbers:
-        if i % 2 != 0:
-            odd_numbers.append(i)
+    odd_numbers = [i for i in numbers if (i % 2 != 0)]
     return odd_numbers
+    # odd_numbers = []
+    # for i in numbers:
+    #     if i % 2 != 0:
+    #         odd_numbers.append(i)
+    # return odd_numbers
 
 
-def print_indices(items):
+def print_indices(list_items):
     """Print index of each item in list, followed by item itself.
 
     Do this without using a "counting variable" --- that is, don't
@@ -41,9 +43,12 @@ def print_indices(items):
         1 Jeep
         2 Volvo
     """
-    for i in items:
-        index_position = items.index(i)
-        print index_position, i
+
+    for index_position, item_type in enumerate(list_items):
+        print index_position, item_type
+    # for i in items:
+    #     index_position = items.index(i)
+    #     print index_position, i
 
 
 def foods_in_common(foods1, foods2):
@@ -75,11 +80,13 @@ def foods_in_common(foods1, foods2):
     """
     overlap = set(foods1) & set(foods2)
     organized_overlap = list(overlap)
-    if len(organized_overlap) >= 1:
-        organized_overlap.sort()
-    else:
-        organized_overlap = []
-    return organized_overlap
+    organized_overlap.sort()
+    print organized_overlap
+    # if len(organized_overlap) >= 1:
+    #     organized_overlap.sort()
+    # else:
+    #     organized_overlap = []
+    # return organized_overlap
 
 
 def every_other_item(items):
